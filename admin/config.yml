@@ -1,18 +1,21 @@
 backend:
   name: git-gateway
   branch: main
-
-media_folder: "static/img"
-public_folder: "/img"
-
+media_folder: "images/uploads"
+slug:
+  encoding: "ascii"
+  clean_accents: true
 collections:
-  - name: "news"
-    label: "Aktuality"
-    folder: "content/news"
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { name: "title", label: "Nadpis", widget: "string" }
-      - { name: "summary", label: "Perex", widget: "text" }
-      - { name: "image", label: "Miniatura", widget: "image" }
-      - { name: "date", label: "Datum", widget: "datetime" }
+  - name: "aktuality" # Jaká bude cesta ke kolekci v administraci,např. /admin/collections/novinky
+    label: "Aktuality" # Jak se kolekce jmenuje v UI administrace
+    folder: "aktuality" # Ve které složce jsou stránky/příspěvky uložené v Eleventy
+    create: true # Uživatel může přidávat nové stránky/příspěvky (nebo false, pokud nemůže)
+    slug: "{{slug}}" # Šablona jmen souborů, např. YYYY-MM-DD-title.md
+    fields: # Pole, která budeme editovat. Obvykle data uložená ve front matter
+      - {label: "Šablona", name: "layout", widget: "hidden", default: "layouts/clanek.njk"}
+      - {label: "Tagy", name: "tags", widget: "hidden", default: "aktuality"}
+      - {label: "Titulek", name: "title", widget: "string"}
+      - {label: "Datum publikace", name: "date", widget: "datetime", required: false}
+      - {label: "Obrázek", name: "image", widget: "image", required: false }
+      - {label: "Perex", name: "perex", widget: "string"}
+      - {label: "Obsah", name: "body", widget: "markdown"}
