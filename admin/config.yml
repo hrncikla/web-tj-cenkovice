@@ -1,0 +1,18 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/img"
+public_folder: "/img"
+
+collections:
+  - name: "news"
+    label: "Aktuality"
+    folder: "content/news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Nadpis", widget: "string" }
+      - { name: "summary", label: "Perex", widget: "text" }
+      - { name: "image", label: "Miniatura", widget: "image" }
+      - { name: "date", label: "Datum", widget: "datetime" }

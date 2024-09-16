@@ -1,0 +1,282 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and font styling */
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+}
+
+.social-icons a img {
+    width: 24px;
+    margin-left: 10px;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.main-content .left {
+    max-width: 50%;
+}
+
+.main-content .right img {
+    max-width: 100%;
+    height: auto;
+}
+
+.main-content h2 {
+    color: #7a7adf;
+    font-size: 20px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.main-content h1 {
+    font-size: 36px;
+    margin: 10px 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+.main-content p {
+    font-size: 18px;
+    margin: 10px 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-content .btn {
+    display: inline-block;
+    background-color: #ff7d63;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.main-content .about {
+    display: inline-block;
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news {
+    text-align: center;
+}
+
+.news h3 {
+    font-size: 24px;
+    font-family: 'Cairo', sans-serif;
+}
+
+.news .news-slider {
+    border: 1px solid #eee;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.btn-news {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-content .left, .main-content .right {
+        max-width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .news {
+        margin-top: 20px;
+    }
+}
+
+
+/* Aktuality Section */
+.news {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.news h3 {
+    font-size: 24px;
+    font-family: 'Cairo', sans-serif;
+    margin-bottom: 20px;
+}
+
+.news-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h4 {
+    font-size: 20px;
+    font-family: 'Cairo', sans-serif;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-details {
+    display: inline-block;
+    background-color: #ff7d63;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.btn-details:hover {
+    background-color: #ff5a40;
+}
+
+/* Responsive Design for News Cards */
+@media (max-width: 768px) {
+    .news-cards {
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+/**/
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.news-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+}
+
+.news-img {
+    width: 100%;
+    height: auto;
+}
+
+.news-content {
+    padding: 15px;
+}
+
+.news-title {
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.news-summary {
+    font-size: 14px;
+    color: #666;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination .btn {
+    margin: 0 5px;
+}
