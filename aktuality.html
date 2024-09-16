@@ -9,36 +9,31 @@
 <body>
     <div class="container">
         <h1>Aktuality</h1>
-        <div class="news-list">
-            <!-- Zde budou jednotlivé karty aktualit -->
-            <div class="news-card">
-                <div class="news-content">
-                    <h2 class="news-title">Nadpis aktuality 1</h2>
-                    <p class="news-summary">Toto je krátký perex k první aktualitě. Zde může být nějaký úvodní text...</p>
-                    <a href="detail1.html" class="btn">Zobrazit podrobnosti</a>
+        <section id="zjisti-vice" class="section section--big_gap section--grey">
+
+            <h1 class="title-h1  title-h1--white">Aktuality</h1>
+        
+            {% for prispevek in collections.aktuality | reverse | limit(15) %}
+                <div class="news">
+                    <h3 class="news__title subtitle-h3">{{ prispevek.data.title }}</h3>
+                    <p class="news__perex">{{ prispevek.data.perex }}</p>
+                    <div class="news__link">
+                        <p><a class="news__text-link" href="{{ prispevek.url }}" aria-label="Zobrazit podrobnosti">
+                            zobrazit podrobnosti     
+                        </a></p>
+                        <a href="{{ prispevek.url }}" aria-label="Zobrazit podrobnosti">
+                            <div  class="arrow-button arrow-button--news">
+                                <svg width="20" height="12" viewBox="0 0 32 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M31.0607 13.0607C31.6464 12.4749 31.6464 11.5251 31.0607 10.9393L21.5147 1.3934C20.9289 0.807611 19.9792 0.807611 19.3934 1.3934C18.8076 1.97919 18.8076 2.92893 19.3934 3.51472L27.8787 12L19.3934 20.4853C18.8076 21.0711 18.8076 22.0208 19.3934 22.6066C19.9792 23.1924 20.9289 23.1924 21.5147 22.6066L31.0607 13.0607ZM0 13.5H30V10.5H0V13.5Z" fill="white"/>
+                                </svg>
+                            </div>
+                        </a>      
+                    </div>
                 </div>
-            </div>
-            <div class="news-card">
-                <div class="news-content">
-                    <h2 class="news-title">Nadpis aktuality 1</h2>
-                    <p class="news-summary">Toto je krátký perex k první aktualitě. Zde může být nějaký úvodní text...</p>
-                    <a href="detail1.html" class="btn">Zobrazit podrobnosti</a>
-                </div>
-            </div>
-            <div class="news-card">
-                <div class="news-content">
-                    <h2 class="news-title">Nadpis aktuality 1</h2>
-                    <p class="news-summary">Toto je krátký perex k první aktualitě. Zde může být nějaký úvodní text...</p>
-                    <a href="detail1.html" class="btn">Zobrazit podrobnosti</a>
-                </div>
-            </div>
-            
-            <!-- Další karty aktualit -->
-        </div>
-        <div class="pagination">
-            <a href="#prev" class="btn">« Předchozí</a>
-            <a href="#next" class="btn">Další »</a>
-        </div>
+            {% endfor %}
+        
+        </section>
+        <section class="section--big_gap"></section>
     </div>
 </body>
 </html>
